@@ -1,7 +1,5 @@
 public class SelectionSort {
     public static void sort(int[] array, boolean desc) {
-        System.out.println("Array before sorting");
-        printArray(array);
         for (int i = 0; i < array.length - 1; i++) {
             int index = i;
 
@@ -19,7 +17,6 @@ public class SelectionSort {
     }
 
     public static void sort(char[] array, boolean desc) {
-        System.out.println("Array before sorting");
 
         for (int i = 0; i < array.length - 1; i++) {
             int index = i;

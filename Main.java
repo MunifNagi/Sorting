@@ -12,15 +12,11 @@ public class Main {
         printArray(stringArray);
         SelectionSort.sort(stringArray, descedningOrder);
         printArray(stringArray);
-        // // sorting array in Ascending order
-        // SS.sort(numArray, false);
-        // SS.sort(charArray, false);
-        // SS.sort(stringArray, false);
 
-        // // sorting array in Descending order
-        // SS.sort(numArray, true);
-        // SS.sort(charArray, true);
-        // SS.sort(stringArray, true);
+        char[] charArray = { 'z', 'a', 'm', 'C', 'c', 'Z', 'X' };
+        printArray(charArray);
+        MergeSort.sort(charArray, descedningOrder);
+        printArray(charArray);
 
     }
 
