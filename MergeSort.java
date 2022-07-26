@@ -1,5 +1,5 @@
 public class MergeSort {
-    public static void mergeSort(int[] array) {
+    public static void mergeSort(int[] array, boolean desc) {
         int arrayLength = array.length;
         if (arrayLength < 2) {
             return;
@@ -17,14 +17,14 @@ public class MergeSort {
         }
         // recursivly MergeSorting the two halves we just creating until we reach a
         // length of 1 to merge them after
-        mergeSort(left);
-        mergeSort(right);
+        mergeSort(left, desc);
+        mergeSort(right, desc);
 
         // finally merge the two sorted arrays into one array
-        merge(array, left, right);
+        merge(array, left, right, desc);
     }
 
-    private static void merge(int[] mergedArray, int[] left, int[] right) {
+    private static void merge(int[] mergedArray, int[] left, int[] right, boolean desc) {
         int leftLength = left.length;
         int rightLength = right.length;
 
@@ -33,7 +33,8 @@ public class MergeSort {
         // looping in both sorted halves of the array and adding the next one into our
         // merged arra
         while (i < leftLength && j < rightLength) {
-            if (left[i] <= right[j]) { // if next elemnt is from the left sorted array
+            if ((!desc && (left[i] <= right[j])) || (desc && (left[i] >= right[j]))) { // if next elemnt is from the
+                                                                                       // left sorted array
                 mergedArray[k] = left[i];
                 i++;
             } else {// else the next element is from the right sorted array
