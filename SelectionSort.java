@@ -15,6 +15,10 @@ public class SelectionSort {
 
     }
 
+    static void sort(int[] array) {
+        sort(array, false);
+    }
+
     static void sort(char[] array, boolean isDesc) {
         // finds the minimum element in array[i..] and swap it with array[i]
         for (int i = 0; i < array.length - 1; i++) {
@@ -32,6 +36,10 @@ public class SelectionSort {
 
     }
 
+    static void sort(char[] array) {
+        sort(array, false);
+    }
+
     static void sort(String[] array, boolean isDesc) {
         // finds the minimum element in array[i..] and swap it with array[i]
         for (int i = 0; i < array.length - 1; i++) {
@@ -47,6 +55,10 @@ public class SelectionSort {
             array[i] = smallerNumber;
         }
 
+    }
+
+    static void sort(String[] array) {
+        sort(array, false);
     }
 
 }

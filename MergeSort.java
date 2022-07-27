@@ -1,5 +1,5 @@
 public class MergeSort {
-    static void sort(int[] array, boolean isisDesc) {
+    static void sort(int[] array, boolean isDesc) {
         int arrayLength = array.length;
         if (arrayLength < 2) {
             return;
@@ -16,19 +16,19 @@ public class MergeSort {
         }
         // recursivly MergeSorting the two halves we just creating until we reach a
         // length of 1, then merge sort them after
-        sort(left, isisDesc);
-        sort(right, isisDesc);
-        merge(array, left, right, isisDesc);
+        sort(left, isDesc);
+        sort(right, isDesc);
+        merge(array, left, right, isDesc);
     }
 
-    private static void merge(int[] mergedArray, int[] left, int[] right, boolean isisDesc) {
+    private static void merge(int[] mergedArray, int[] left, int[] right, boolean isDesc) {
         int leftLength = left.length;
         int rightLength = right.length;
         int i = 0, j = 0, k = 0;
         // looping in both sorted halves of the array and adding the next one into our
         // merged arrayy
         while (i < leftLength && j < rightLength) {
-            if ((!isisDesc && (left[i] <= right[j])) || (isisDesc && (left[i] >= right[j]))) {
+            if ((!isDesc && (left[i] <= right[j])) || (isDesc && (left[i] >= right[j]))) {
                 mergedArray[k] = left[i];
                 i++;
             } else {
@@ -37,7 +37,6 @@ public class MergeSort {
             }
             k++;
         }
-
         // we might still have remaining sorted elements in either halves of the array
         while (j < rightLength) {
             mergedArray[k] = right[j];
@@ -49,7 +48,6 @@ public class MergeSort {
             i++;
             k++;
         }
-
     }
 
     static void sort(char[] array, boolean isDesc) {
@@ -90,7 +88,6 @@ public class MergeSort {
             }
             k++;
         }
-
         // we might still have remaining sorted elements in either halves of the array
         while (j < rightLength) {
             mergedArray[k] = right[j];
@@ -102,7 +99,6 @@ public class MergeSort {
             i++;
             k++;
         }
-
     }
 
     static void sort(String[] array, boolean isDesc) {
@@ -154,6 +150,20 @@ public class MergeSort {
             i++;
             k++;
         }
+    }
+
+    // to give the user ability to call the sorting method without the isDesc
+    // argument
+    static void sort(int[] array) {
+        sort(array, false);
+    }
+
+    static void sort(char[] array) {
+        sort(array, false);
+    }
+
+    static void sort(String[] array) {
+        sort(array, false);
     }
 
 }

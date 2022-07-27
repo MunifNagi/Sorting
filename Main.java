@@ -2,12 +2,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        int[] numArr = { 100, 5, 3, 8, 9, 50, -3, 8, -20, 9, 21 };
+        System.out.println("number Array before sorting");
+        printArray(numArr);
+        MergeSort.sort(numArr);
+        System.out.println("number Array sorted");
+        printArray(numArr);
+
+        System.out.println("");
+        System.out.println("Try selecting the order and algorithm for the following arrays");
         int[] numArray = { 1, 23, 3, 4, 2, -14, 10, 8, -20, 9, 21 };
         runAlgorithm(numArray);
-
+        System.out.println("");
         String[] stringArray = { "zc", "aba", "ab", "ba", "abc", "a", };
         runAlgorithm(stringArray);
-
+        System.out.println("");
         char[] charArray = { 'a', 'z', 'M', 'N', 'Z', 'A' };
         runAlgorithm(charArray);
     }
@@ -90,7 +99,6 @@ public class Main {
     }
 
     static void printArray(int[] arr) {
-        System.out.println("");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -98,7 +106,6 @@ public class Main {
     }
 
     static void printArray(char[] arr) {
-        System.out.println("");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -106,7 +113,6 @@ public class Main {
     }
 
     static void printArray(String[] arr) {
-        System.out.println("");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
