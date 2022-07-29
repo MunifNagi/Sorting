@@ -14,7 +14,7 @@ public class MergeSort {
         for (int i = midPoint; i < arrayLength; i++) {
             right[i - midPoint] = array[i];
         }
-        // recursivly MergeSorting the two halves we just creating until we reach a
+        // recursivly breaking the two halves we just creating until we reach a
         // length of 1, then merge sort them after
         sort(left, isDesc);
         sort(right, isDesc);
@@ -25,8 +25,6 @@ public class MergeSort {
         int leftLength = left.length;
         int rightLength = right.length;
         int i = 0, j = 0, k = 0;
-        // looping in both sorted halves of the array and adding the next one into our
-        // merged arrayy
         while (i < leftLength && j < rightLength) {
             if ((!isDesc && (left[i] <= right[j])) || (isDesc && (left[i] >= right[j]))) {
                 mergedArray[k] = left[i];
@@ -64,7 +62,7 @@ public class MergeSort {
         for (int i = midPoint; i < arrayLength; i++) {
             right[i - midPoint] = array[i];
         }
-        // recursivly MergeSorting the two halves we just creating until we reach a
+        // recursivly breaking the two halves we just creating until we reach a
         // length of 1, then merge sort them after
         sort(left, isDesc);
         sort(right, isDesc);
@@ -75,8 +73,6 @@ public class MergeSort {
         int leftLength = left.length;
         int rightLength = right.length;
         int i = 0, j = 0, k = 0;
-        // looping in both sorted halves of the array and adding the next one into our
-        // merged array
         while (i < leftLength && j < rightLength) {
             if ((!isDesc && Character.compare(left[i], right[j]) <= 0)
                     || (isDesc && (Character.compare(right[j], left[i]) <= 0))) {
@@ -115,7 +111,7 @@ public class MergeSort {
         for (int i = midPoint; i < arrayLength; i++) {
             right[i - midPoint] = array[i];
         }
-        // recursivly MergeSorting the two halves we just creating until we reach a
+        // recursivly breaking the two halves we just creating until we reach a
         // length of 1, then merge sort them after
         sort(left, isDesc);
         sort(right, isDesc);
@@ -126,8 +122,6 @@ public class MergeSort {
         int leftLength = left.length;
         int rightLength = right.length;
         int i = 0, j = 0, k = 0;
-        // looping in both sorted halves of the array and adding the next one into our
-        // merged array
         while (i < leftLength && j < rightLength) {
             if ((!isDesc && (left[i].compareTo(right[j]) <= 0))
                     || (isDesc && (right[j].compareTo(left[i]) <= 0))) {
