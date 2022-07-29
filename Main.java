@@ -24,6 +24,7 @@ public class Main {
         runAlgorithm(charArray, sortingAlgortithms);
     }
 
+
     static void runAlgorithm(int[] arr, String[] sortingAlgortithms) {
         Scanner sc = new Scanner(System.in);
         printArray(arr);
