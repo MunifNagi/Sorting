@@ -2,119 +2,126 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int[] numArr = { 100, 5, 3, 8, 9, 50, -3, 8, -20, 9, 21 };
+        int[] numArr = { 99, 5, 3, 8, 9, 50, -3, 8, -20, 9, 21 };
         System.out.println("number Array before sorting");
         printArray(numArr);
-        MergeSort.sort(numArr);
+        SelectionSort.sort(numArr);
         System.out.println("number Array sorted");
         printArray(numArr);
 
         System.out.println("");
         System.out.println("Try selecting the order and algorithm for the following arrays");
+        String[] sortingAlgortithms = { "1) Merge Sort in ascending order", "2) Merge Sort in descending order",
+                "3) Selection Sort in ascending order", "4)Selection sort in descending order" };
         int[] numArray = { 1, 23, 3, 4, 2, -14, 10, 8, -20, 9, 21 };
-        runAlgorithm(numArray);
+
+        runAlgorithm(numArray, sortingAlgortithms);
         System.out.println("");
         String[] stringArray = { "zc", "aba", "ab", "ba", "abc", "a", };
-        runAlgorithm(stringArray);
+        runAlgorithm(stringArray, sortingAlgortithms);
         System.out.println("");
         char[] charArray = { 'a', 'z', 'M', 'N', 'Z', 'A' };
-        runAlgorithm(charArray);
+        runAlgorithm(charArray, sortingAlgortithms);
     }
 
-    static void runAlgorithm(int[] arr) {
-        Boolean isDescending;
+    static void runAlgorithm(int[] arr, String[] sortingAlgortithms) {
         Scanner sc = new Scanner(System.in);
         printArray(arr);
-        System.out.println("How would you like the number array to be sorted?");
-        System.out.println("*. Enter 1 for ascedning order");
-        System.out.println("*. Press 2 for descending order");
+        System.out.println("How would you like the number array above to be sorted?");
+        for (String s : sortingAlgortithms) {
+            System.out.println(s);
+        }
         String userInput = sc.next();
-        if (userInput.equals("1")) {
-            isDescending = false;
-        } else {
-            isDescending = true;
-        }
-        System.out.println("Which sorting algorithm would you like to use?");
-        System.out.println("*. Enter 1 for Merge Sort");
-        System.out.println("*. Press 2 for Selection Sort");
-        userInput = sc.next();
-        if (userInput.equals("1")) {
-            MergeSort.sort(arr, isDescending);
-        } else {
-            SelectionSort.sort(arr, isDescending);
-        }
-        printArray(arr);
-
-    }
-
-    static void runAlgorithm(char[] arr) {
-        Boolean isDescending;
-        printArray(arr);
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("How would you like the char array to be sorted?");
-        System.out.println("*. Enter 1 for ascedning order");
-        System.out.println("*. Press 2 for descending order");
-        String userInput = sc.next();
-        if (userInput.equals("1")) {
-            isDescending = false;
-        } else {
-            isDescending = true;
-        }
-        System.out.println("Which sorting algorithm would you like to use?");
-        System.out.println("*. Enter 1 for Merge Sort");
-        System.out.println("*. Press 2 for Selections Sort");
-        userInput = sc.next();
-        if (userInput.equals("1")) {
-            MergeSort.sort(arr, isDescending);
-        } else {
-            SelectionSort.sort(arr, isDescending);
+        switch (userInput) {
+            case "1":
+                MergeSort.sort(arr, false);
+                break;
+            case "2":
+                MergeSort.sort(arr, true);
+                break;
+            case "3":
+                SelectionSort.sort(arr, false);
+                break;
+            case "4":
+                SelectionSort.sort(arr, true);
+                break;
+            default:
+                MergeSort.sort(arr);
         }
         printArray(arr);
     }
 
-    static void runAlgorithm(String[] arr) {
-        Boolean isDescending;
+    static void runAlgorithm(char[] arr, String[] sortingAlgortithms) {
         Scanner sc = new Scanner(System.in);
         printArray(arr);
-        System.out.println("How would you like the string array to be sorted?");
-        System.out.println("*. Enter 1 for ascedning order");
-        System.out.println("*. Press 2 for descending order");
-        String userInput = sc.next();
-        if (userInput.equals("1")) {
-            isDescending = false;
-        } else {
-            isDescending = true;
+        System.out.println("How would you like the number array above to be sorted?");
+        for (String s : sortingAlgortithms) {
+            System.out.println(s);
         }
-        System.out.println("Which sorting algorithm would you like to use?");
-        System.out.println("*. Enter 1 for Merge Sort");
-        System.out.println("*. Press 2 for Selection Sort");
-        userInput = sc.next();
-        if (userInput.equals("1")) {
-            MergeSort.sort(arr, isDescending);
-        } else {
-            SelectionSort.sort(arr, isDescending);
+        String userInput = sc.next();
+        switch (userInput) {
+            case "1":
+                MergeSort.sort(arr, false);
+                break;
+            case "2":
+                MergeSort.sort(arr, true);
+                break;
+            case "3":
+                SelectionSort.sort(arr, false);
+                break;
+            case "4":
+                SelectionSort.sort(arr, true);
+                break;
+            default:
+                MergeSort.sort(arr);
+        }
+        printArray(arr);
+    }
+
+    static void runAlgorithm(String[] arr, String[] sortingAlgortithms) {
+        Scanner sc = new Scanner(System.in);
+        printArray(arr);
+        System.out.println("How would you like the number array above to be sorted?");
+        for (String s : sortingAlgortithms) {
+            System.out.println(s);
+        }
+        String userInput = sc.next();
+        switch (userInput) {
+            case "1":
+                MergeSort.sort(arr, false);
+                break;
+            case "2":
+                MergeSort.sort(arr, true);
+                break;
+            case "3":
+                SelectionSort.sort(arr, false);
+                break;
+            case "4":
+                SelectionSort.sort(arr, true);
+                break;
+            default:
+                MergeSort.sort(arr);
         }
         printArray(arr);
     }
 
     static void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int i : arr) {
+            System.out.print(i + " ");
         }
         System.out.println("");
     }
 
     static void printArray(char[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (char i : arr) {
+            System.out.print(i + " ");
         }
         System.out.println("");
     }
 
     static void printArray(String[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (String i : arr) {
+            System.out.print(i + " ");
         }
         System.out.println("");
     }
