@@ -8,11 +8,14 @@ public class SelectionSort {
                     index = j;
                 }
             }
-            int minimum = array[index];
-            array[index] = array[i];
-            array[i] = minimum;
+            swap(array, i, index);
         }
+    }
 
+    static void swap(int[] array, int index1, int index2) {
+        int tmp = array[index2];
+        array[index2] = array[index1];
+        array[index1] = tmp;
     }
 
     static void sort(int[] array) {
@@ -29,11 +32,14 @@ public class SelectionSort {
                     index = j;
                 }
             }
-            char minimum = array[index];
-            array[index] = array[i];
-            array[i] = minimum;
+            swap(array, i, index);
         }
+    }
 
+    static void swap(char[] array, int index1, int index2) {
+        char tmp = array[index2];
+        array[index2] = array[index1];
+        array[index1] = tmp;
     }
 
     static void sort(char[] array) {
@@ -50,11 +56,14 @@ public class SelectionSort {
                     index = j;
                 }
             }
-            String smallerNumber = array[index];
-            array[index] = array[i];
-            array[i] = smallerNumber;
+            swap(array, i, index);
         }
+    }
 
+    static void swap(String[] array, int index1, int index2) {
+        String tmp = array[index2];
+        array[index2] = array[index1];
+        array[index1] = tmp;
     }
 
     static void sort(String[] array) {
